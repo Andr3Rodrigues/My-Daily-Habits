@@ -46,12 +46,12 @@
 body {
  font-family: system-ui, -apple-system, sans-serif;
  margin: 0;
- background-color: #00003b;
+ background-color: #70708d;
 }
 
 header, footer {
   padding: 10px;
-  background-color: #111827;
+  background-color: #060607;
   color: #ffffff;
   text-align: center;
 }
