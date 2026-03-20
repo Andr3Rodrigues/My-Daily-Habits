@@ -95,7 +95,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #920505;
+  background-color: #960909c7;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -111,4 +111,144 @@ button:hover {
 
 section h2 {
   text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link.ativo {
+  color: #ffffff;
+  border-bottom: 2px solid #646cff;
+}
+
+.pagina-inicio {
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.resumo {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.resumo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  padding: 24px 32px;
+  gap: 8px;
+}
+
+.resumo-card strong {
+  font-size: 2rem;
+}
+
+.btn-primario {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #646cff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pagina-detalhes {
+  padding: 24px 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detalhe-card {
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.detalhe-info {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-voltar {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.btn-detalhes {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #646cff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.btn-remover-card {
+  padding: 6px 12px;
+  background-color: #be0606;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.habit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habit-card-acoes {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pagina-404 {
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.pagina-habitos h1 {
+  text-align: center;
+  padding: 16px 0;
 }

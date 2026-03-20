@@ -1,22 +1,25 @@
 import { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import HabitCard from './HabitCard'
 import { useHabits } from '../contexts/HabitsContext'
 
 function HabitList() {
   const { habits, adicionarHabit, removerHabit } = useHabits()
+  const navigate = useNavigate()
+
   const [form, setForm] = useState({
     novoNome: '',
     novaDescricao: '',
     novaCategoria: '',
-    novaMeta: '',
+    novaMeta: '7',
   })
   const [erroNome, setErroNome] = useState('')
   const nomeInputRef = useRef(null)
-  const handleChange = (e) => {
-  const { name, value } = e.target
 
+  const handleChange = (e) => {
+    const { name, value } = e.target
     setForm(prev => ({ ...prev, [name]: value }))
-      if (name === 'novoNome') {
+    if (name === 'novoNome') {
       if (value.length > 0 && value.length < 3) {
         setErroNome('O nome deve ter pelo menos 3 caracteres.')
       } else {
@@ -27,7 +30,7 @@ function HabitList() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-      if (!form.novoNome.trim() || erroNome) {
+    if (!form.novoNome.trim() || erroNome) {
       nomeInputRef.current?.focus()
       return
     }
@@ -43,10 +46,10 @@ function HabitList() {
     adicionarHabit(novoHabit)
     setForm({ novoNome: '', novaDescricao: '', novaCategoria: '', novaMeta: '7' })
     setErroNome('')
-    nomeInputRef.current?.focus()
+    navigate('/habitos')
   }
 
-     if (!habits) return null
+  if (!habits) return null
 
   return (
     <section>
@@ -71,7 +74,7 @@ function HabitList() {
           </label>
         </div>
         <div>
-          <label>Meta (dias por semana)
+          <label>Meta semanal (dias)
             <input type="number" name="novaMeta" min="1" max="7"
               value={form.novaMeta} onChange={handleChange} />
           </label>
@@ -87,12 +90,13 @@ function HabitList() {
         {habits.map((habit) => (
           <HabitCard
             key={habit.id}
+            id={habit.id}
             nome={habit.nome}
             descricao={habit.descricao}
-            categoria={habit.categoria}
             meta={habit.meta}
             ativo={habit.ativo}
             diasFeitos={habit.diasFeitos}
+            categoria={habit.categoria}
             onRemover={() => removerHabit(habit.id)}
           />
         ))}
